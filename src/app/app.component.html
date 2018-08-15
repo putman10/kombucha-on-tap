@@ -1,3 +1,46 @@
 <h1>
   {{title}}
 </h1>
+
+<div class="container">
+  <div class="row headers">
+    <div class="col-sm-2">
+      <h2>Name</h2>
+    </div>
+    <div class="col-sm-2">
+      <h2>Brand</h2>
+    </div>
+    <div class="col-sm-2">
+      <h2>Price Per Pint</h2>
+    </div>
+    <div class="col-sm-2">
+      <h2>Alcohol Content</h2>
+    </div>
+    <div class="col-sm-2">
+      <h2>Flavors</h2>
+    </div>
+    <div class="col-sm-2">
+      <h2>Pints Left</h2>
+    </div>
+  </div>
+  <div class="row data-line" *ngFor="let keg of kegs">
+    <div class="col-sm-2">
+      <p>{{keg.name}}</p>
+    </div>
+    <div class="col-sm-2">
+      <p>{{keg.brand}}</p>
+    </div>
+    <div class="col-sm-2">
+      <p>{{keg.pricePerPint}}</p>
+    </div>
+    <div class="col-sm-2">
+      <p>{{keg.alcoholContent}}</p>
+    </div>
+    <div class="col-sm-2">
+      <p *ngFor="let flavor of keg.flavors">{{flavor}}</p>
+    </div>
+    <div class="col-sm-2">
+      <p>{{keg.pintsRemaining}}</p>
+    </div>
+  </div>
+</div>
