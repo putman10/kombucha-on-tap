@@ -1,0 +1,43 @@
+.blue {
+  font-weight: 700;
+  color:#5b60ff;
+}
+
+.red {
+  font-weight: 700;
+  color:#d80000;
+}
+
+.green {
+  font-weight: 700;
+  color:#28a745;
+}
+
+.data-line:nth-of-type(2n){
+    background: #f1f1f1;
+}
+
+.data-line{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.buttons button {
+  margin-bottom: 10px;
+  width: 49%;
+}
+
+.data-line .col-sm-2,
+.data-line .col-sm-1 {
+    border-right: 1px dashed black;
+}
+
+.headers {
+    background: #505050;
+    color: white;
+    text-align: left;
+}
+
+.sort-arrows {
+  
+}

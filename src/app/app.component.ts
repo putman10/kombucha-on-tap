@@ -12,12 +12,12 @@ export class AppComponent {
     new Keg (
       'Blue Steel',
       'Zoolander',
-      5, 0.05, ["stiller", "movie-inspired"], 12
+      5, 0.05, ["Stiller", "Movie-inspired"], 12
     ),
     new Keg (
-      'Blue Sky', 'Store', 6, 0.00003, ['oil', 'vinegar'], 8
+      'Blue Sky', 'Store', 6, 0.003, ['Oil', 'Vinegar'], 8
     ),
-    new Keg ('Crocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ['dont consume', 'ancient'], 60)
+    new Keg ('Crocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ["Don't consume", 'Ancient'], 60)
   ]
   selectedKeg = null;
 
@@ -37,9 +37,17 @@ export class AppComponent {
   }
 
   removeFlavor(currentKeg, flavor) {
-    console.log(flavor);
     let index = currentKeg.flavors.indexOf(flavor);
-    console.log(index);
     return currentKeg.flavors.splice(index, 1)
   }
+
+  costColor(currentKeg) {
+  if (currentKeg.pricePerPint > 5) {
+    return 'blue';
+  } else if (currentKeg.pricePerPint === 5) {
+    return "red";
+  } else {
+    return "green";
+  }
+}
 }

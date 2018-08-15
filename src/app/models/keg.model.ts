@@ -5,7 +5,11 @@ export class Keg {
     this.pintsRemaining --;
   }
 
-  sellGrowler(){
+  sellSmallGrowler(){
     this.pintsRemaining -= 2;
+  }
+
+  sellLargeGrowler(){
+    this.pintsRemaining -= 4;
   }
 }

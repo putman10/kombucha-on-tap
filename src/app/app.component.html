@@ -5,28 +5,28 @@
 <div class="container">
   <div class="row headers">
     <div class="col-sm-2">
-      <h2>Name</h2>
+      <h5>Name <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
     </div>
     <div class="col-sm-2">
-      <h2>Brand</h2>
+      <h5>Brand <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
     </div>
     <div class="col-sm-1">
-      <h2>$/Pint</h2>
-    </div>
-    <div class="col-sm-2">
-      <h2>Alcohol Content</h2>
-    </div>
-    <div class="col-sm-2">
-      <h2>Flavors</h2>
+      <h5>Price (Pint) <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
     </div>
     <div class="col-sm-1">
-      <h2>Pints Left</h2>
+      <h5>Alcohol Content <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
     </div>
     <div class="col-sm-2">
-      <h2>Edit/Sell/Delete</h2>
+      <h5>Flavors <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+    </div>
+    <div class="col-sm-1">
+      <h5>Pints Left <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+    </div>
+    <div class="col-sm-3">
+      <h5>Edit/Sell/Delete <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
     </div>
   </div>
-  <div class="row data-line" *ngFor="let keg of kegs">
+  <div class="row data-line" *ngFor="let keg of kegs" >
     <div class="col-sm-2">
       <p>{{keg.name}}</p>
     </div>
@@ -34,10 +34,12 @@
       <p>{{keg.brand}}</p>
     </div>
     <div class="col-sm-1">
-      <p>{{keg.pricePerPint}}</p>
+      <div [class]="costColor(keg)" >
+        <p>${{keg.pricePerPint}}</p>
+      </div>
     </div>
-    <div class="col-sm-2">
-      <p>{{keg.alcoholContent}}</p>
+    <div class="col-sm-1">
+      <p>{{keg.alcoholContent}}%</p>
     </div>
     <div class="col-sm-2">
       <p *ngFor="let flavor of keg.flavors">{{flavor}}</p>
@@ -45,9 +47,10 @@
     <div class="col-sm-1">
       <p>{{keg.pintsRemaining}}</p>
     </div>
-    <div class="col-sm-2">
-      <button (click)='keg.sellPint()' type="button" name="sellPint" class="btn btn-info"> Sell Pint</button>
-      <button (click)='keg.sellGrowler()' type="button" name="sellGrowler" class="btn btn-success"> Sell Growler</button>
+    <div class="col-sm-3 buttons">
+      <button (click)='keg.sellPint()' type="button" name="sellPint" class="btn btn-success">Pint</button>
+      <button (click)='keg.sellSmallGrowler()' type="button" name="sellGrowler" class="btn btn-success">Sm Growler</button>
+      <button (click)='keg.sellLargeGrowler()' type="button" name="sellGrowler" class="btn btn-success">Lg Growler</button>
       <button (click)='editKeg(keg)' type="button" name="editKeg" class="btn btn-warning">Edit Keg</button>
     </div>
   </div>
