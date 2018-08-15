@@ -19,4 +19,27 @@ export class AppComponent {
     ),
     new Keg ('Crocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ['dont consume', 'ancient'], 60)
   ]
+  selectedKeg = null;
+
+  finishedEditing() {
+  this.selectedKeg = null;
+  }
+
+  editKeg(currentKeg){
+    this.selectedKeg = currentKeg;
+  }
+
+  flavorName = '';
+
+  addFlavor(currentKeg){
+    currentKeg.flavors.push(this.flavorName);
+    this.flavorName = ''
+  }
+
+  removeFlavor(currentKeg, flavor) {
+    console.log(flavor);
+    let index = currentKeg.flavors.indexOf(flavor);
+    console.log(index);
+    return currentKeg.flavors.splice(index, 1)
+  }
 }
