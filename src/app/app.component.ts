@@ -10,14 +10,14 @@ export class AppComponent {
   title = "Kombucha Tap"
   kegs: Keg[] = [
     new Keg (
-      'bBlue Steel',
+      'Blue Steel',
       'Zoolander',
       5, 0.05, ["Stiller", "Movie-inspired"], 12
     ),
     new Keg (
-      'aBlue Sky', 'Store', 6, 0.003, ['Oil', 'Vinegar'], 8
+      'Blue Sky', 'Store', 6, 0.003, ['Oil', 'Vinegar'], 8
     ),
-    new Keg ('cCrocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ["Don't consume", 'Ancient'], 60)
+    new Keg ('Crocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ["Don't consume", 'Ancient'], 60)
   ]
   selectedKeg = null;
 

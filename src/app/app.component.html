@@ -60,19 +60,19 @@
     <form class="editForm">
       <div class="form-group">
         <label for="name">Edit Name:</label>
-        <input type="text" name="name" class="form-control" value="{{selectedKeg.name}}">
+        <input type="text" name="name" class="form-control" [(ngModel)]="selectedKeg.name">
       </div>
       <div class="form-group">
         <label for="brand">Edit Brand:</label>
-        <input type="text" name="brand" class="form-control" value="{{selectedKeg.brand}}">
+        <input type="text" name="brand" class="form-control" [(ngModel)]="selectedKeg.brand">
       </div>
       <div class="form-group">
         <label for="pricePerPint">Edit Price Per Pint:</label>
-        <input type="number" name="pricePerPint" class="form-control" value="{{selectedKeg.pricePerPint}}">
+        <input type="number" name="pricePerPint" class="form-control" [(ngModel)]="selectedKeg.pricePerPint">
       </div>
       <div class="form-group">
         <label for="alcoholContent">Edit Alchohol Content:</label>
-        <input type="text" name="alcoholContent" class="form-control" value="{{selectedKeg.alcoholContent}}">
+        <input type="text" name="alcoholContent" class="form-control" [(ngModel)]="selectedKeg.alcoholContent">
       </div>
       <div class="form-group">
         <label for="flavors">Edit Flavors</label>
@@ -82,7 +82,7 @@
       </div>
       <div class="form-group">
         <label for="pintsRemaining">Edit Pints Left:</label>
-        <input type="text" name="pintsRemaining" class="form-control" value="{{selectedKeg.pintsRemaining}}">
+        <input type="text" name="pintsRemaining" class="form-control" [(ngModel)]="selectedKeg.pintsRemaining">
       </div>
       <button type="button" name="button" (click)="finishedEditing()" class="btn btn-warning">Update</button>
     </form>
