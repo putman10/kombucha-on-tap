@@ -5,25 +5,25 @@
 <div class="container">
   <div class="row headers">
     <div class="col-sm-2">
-      <h5>Name <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Name <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows" (click)="sort('name')"></h5>
     </div>
     <div class="col-sm-2">
-      <h5>Brand <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Brand <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows" (click)="sort('brand')"></h5>
     </div>
     <div class="col-sm-1">
-      <h5>Price (Pint) <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Price (Pint) <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows" (click)="sortNumber('pricePerPint')"></h5>
     </div>
     <div class="col-sm-1">
-      <h5>Alcohol Content <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Alcohol Content <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows" (click)="sortNumber('alcoholContent')"></h5>
     </div>
     <div class="col-sm-2">
-      <h5>Flavors <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Flavors</h5>
     </div>
     <div class="col-sm-1">
-      <h5>Pints Left <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Pints Left <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows" (click)="sortNumber('pintsRemaining')"></h5>
     </div>
     <div class="col-sm-3">
-      <h5>Edit/Sell/Delete <img src="./assets/images/elevator.png" alt="up-down-arrows" class="sort-arrows"></h5>
+      <h5>Edit/Sell/Delete</h5>
     </div>
   </div>
   <div class="row data-line" *ngFor="let keg of kegs" >

@@ -10,14 +10,14 @@ export class AppComponent {
   title = "Kombucha Tap"
   kegs: Keg[] = [
     new Keg (
-      'Blue Steel',
+      'bBlue Steel',
       'Zoolander',
       5, 0.05, ["Stiller", "Movie-inspired"], 12
     ),
     new Keg (
-      'Blue Sky', 'Store', 6, 0.003, ['Oil', 'Vinegar'], 8
+      'aBlue Sky', 'Store', 6, 0.003, ['Oil', 'Vinegar'], 8
     ),
-    new Keg ('Crocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ["Don't consume", 'Ancient'], 60)
+    new Keg ('cCrocodile Dung', 'Egyptian Contraceptive', 4, 0.1, ["Don't consume", 'Ancient'], 60)
   ]
   selectedKeg = null;
 
@@ -42,12 +42,53 @@ export class AppComponent {
   }
 
   costColor(currentKeg) {
-  if (currentKeg.pricePerPint > 5) {
-    return 'blue';
-  } else if (currentKeg.pricePerPint === 5) {
-    return "red";
-  } else {
-    return "green";
+    if (currentKeg.pricePerPint > 5) {
+      return 'blue';
+    } else if (currentKeg.pricePerPint === 5) {
+      return "red";
+    } else {
+      return "green";
+    }
   }
-}
+
+  sortedByAndOrder = 'null'
+
+  sort(property) {
+    if (this.sortedByAndOrder.includes(property + 'Descending')) {
+      this.kegs.sort( (a, b) => {
+        if (a[property].toLowerCase() > b[property].toLowerCase()) {
+          return 1
+        } else {
+          return -1
+        }
+    })
+      this.sortedByAndOrder = property + 'Ascending'
+    } else {
+      this.kegs.sort( (a, b) => {
+        if (a[property].toLowerCase() > b[property].toLowerCase()) {
+          return -1
+        } else {
+          return 1
+        }
+    })
+      this.sortedByAndOrder = property + 'Descending'
+    }
+  }
+
+  numberSortType = 'null'
+
+  sortNumber(property) {
+
+    if (this.numberSortType.includes(property + 'Descending')) {
+      this.kegs.sort( (a, b) => {
+        return a[property] - b[property]
+    })
+      this.numberSortType = property + 'Ascending'
+    } else {
+      this.kegs.sort( (a, b) => {
+        return b[property] - a[property]
+    })
+      this.numberSortType = property + 'Descending'
+    }
+  }
 }
