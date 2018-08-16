@@ -12,4 +12,8 @@ export class Keg {
   sellLargeGrowler(){
     this.pintsRemaining -= 4;
   }
+
+  discount(percentage){
+    this.pricePerPint = this.pricePerPint - (this.pricePerPint * percentage)/100; 
+  }
 }

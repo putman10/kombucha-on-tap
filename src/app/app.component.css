@@ -39,5 +39,30 @@
 }
 
 .sort-arrows {
-  
+    height: 14px;
+}
+
+.headers h5 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.flavorButton {
+  margin: 0 2px 10px 6px;
+}
+
+#flavors button {
+  margin-top: 10px;
+}
+
+#happyHour {
+  margin-bottom: 10px;
 }

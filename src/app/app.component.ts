@@ -91,4 +91,11 @@ export class AppComponent {
       this.numberSortType = property + 'Descending'
     }
   }
+
+  happyHourDiscount(){
+    this.kegs.forEach(function(keg){
+      keg.discount(20);
+      console.log(keg.pricePerPint);
+    })
+  }
 }
