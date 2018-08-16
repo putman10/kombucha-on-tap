@@ -98,4 +98,12 @@ export class AppComponent {
       console.log(keg.pricePerPint);
     })
   }
+
+  calculatePintsAsPercent(keg) {
+    let percentNumber = keg.pintsRemaining / 1.24
+    return percentNumber.toString()
+  }
+
+  // percentOfKegRemaining: string = toString(this.pintsRemaining / 1.24);
+
 }

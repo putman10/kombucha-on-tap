@@ -29,6 +29,9 @@
   <div class="row data-line" *ngFor="let keg of kegs" >
     <div class="col-sm-2">
       <p>{{keg.name}}</p>
+      <p>{{keg.pintsRemaining}}</p>
+      <div class="ldBar" [attr.data-value]="calculatePintsAsPercent(keg)" data-type="fill" data-path="M10 10L90 10L90 90L10 90Z"   data-fill="data:ldbar/res,bubble(#F99,#fff,50,1)" data-pattern-size="50"
+></div>
     </div>
     <div class="col-sm-2">
       <p>{{keg.brand}}</p>
